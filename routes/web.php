@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PostController@index');
+
+Route::resource('posts', 'PostController')->except(['create', 'show']);
